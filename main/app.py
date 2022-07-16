@@ -3,10 +3,12 @@ from PIL import Image
 import numpy as np
 
 def main():
+    #Welcome message
     stream.title("Tumor Classification app")
     stream.write("Hello! welcome to T-Classify, a Tumor classification application that allows you to classify a tumor image as bening or malgnant.")
-    stream.write("Please click the 'Browse here' button or drag and drop an image file below to classify your image")
+    stream.write("Please click the 'Browse files' button or drag and drop an image file below to classify your image")
     file = stream.file_uploader("Upload",type=["png","jpg","jpeg"])
+    #checks if the user uploaded an image
     if file is not None:
         file_img = Image.open(file)
         fr = stream.image(file_img)
@@ -23,4 +25,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-#stream.image("/Users/kingtomi/Desktop/Tomisin/Streamlit/main/Ticket Reservation.jpg")
